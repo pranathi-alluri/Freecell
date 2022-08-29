@@ -2,35 +2,22 @@
 Implementation of the single-player card game ["Freecell"](https://en.wikipedia.org/wiki/FreeCell). Built in Java using an MVC design pattern.  
 
 ## Gameplay
-The controller is publically used to run the game, taking in the intial input and printing the current game state.
+The controller is publically used to run the game, taking in the intial input and printing the current game state to the provided output. 
 
-### Starting Game 
-This implementation has two game type: single move and multimove. Thus, to start the game, one needs to declare the game type. 
+### Start Game
+This implementation has two game types. Hence, to start the game one need to declare the corresponding model: 
+<ul>
+<li> SINGLEMOVE - new FreecellModelCreator().create(FreecellModelCreator.GameType.SINGLEMOVE) 
+<ul>
+<li> Only move one card at a time 
+</ul>
+<li> MULTIMOVE - new FreecellModelCreator().create(FreecellModelCreator.GameType.MULTIMOVE)
+<ul>
+<li> Move several cards that are consecutively descending value and alternating colors from a one cascade pile to another casacde pile 
+</ul>
+</ul>
 
-new FreecellModelCreator();
+Then, start the game by creating a new insatnce of the public class SimpleFreecellController by passing in the created model, along with a readbale and appendable, and calling 
 
 
-- start game = new game of freecell 
-shuffle = true 
-move = move one card at a time 
-construcotr 
-to string 
-
-controller = run the game of freecell --> input and prinitng game state
-view = 
-
-create(SINGLEMOVE, MULTIMOVE)
-play game
-input readable object 
-parameters - deck, num of casacde, num of open piles, shuffle cards
-user input: source plule 
-card index
-destination pile 
-c = cascade
-f = foundation
-o = open
-q = quit 
-
-new FreecellModelCreator()
-getdeck
 
