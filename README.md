@@ -6,21 +6,28 @@ The controller is publically used to run the game, taking in the initial input a
 
 #### Starting Game
 This implementation has two game types. Hence, to start the game one needs to declare the corresponding model: 
+
 <ul>
-<li> SINGLEMOVE - new FreecellModelCreator().create(FreecellModelCreator.GameType.SINGLEMOVE) 
+<li> SINGLEMOVE - Only move one card at a time 
+</ul>
+
+```java 
+new FreecellModelCreator().create(FreecellModelCreator.GameType.SINGLEMOVE) 
+```
+
 <ul>
-<li> Only move one card at a time 
+<li> MULTIMOVE - Move several cards that are consecutively descending value and alternating colors from one cascade pile to another cascade pile 
 </ul>
-<li> MULTIMOVE - new FreecellModelCreator().create(FreecellModelCreator.GameType.MULTIMOVE)
-<ul>
-<li> Move several cards that are consecutively descending value and alternating colors from one cascade pile to another cascade pile 
-</ul>
-</ul>
+
+```java 
+new FreecellModelCreator().create(FreecellModelCreator.GameType.MULTIMOVE) 
+```
 
 Then, start the game by creating a new instance of the public class SimpleFreecellController by passing in the created model, along with a readable and appendable, and then calling playGame: 
 
-<ul>
-<li> new SimpleFreecellController(model, readable, appendable).playGame(deck, numOfCascPiles, numOfOpenPiles, shuffle);
+```java
+new SimpleFreecellController(model, readable, appendable).playGame(deck, numOfCascPiles, numOfOpenPiles, shuffle);
+```
 <ul>
 <li> model = created model
 <li> readable = input
@@ -36,7 +43,6 @@ Then, start the game by creating a new instance of the public class SimpleFreece
  <li> numOfOpenPiles = Number of Open Piles
  <li> shuffle = shuffles the deck if true and doesn't if false 
 </ul>
-</ul> 
 
 #### Playing Game
 To move a card a valid input includes the source pile of the card being moved, the card index, and the destination pile. For example, a valid input would be "C3 5 F2".
