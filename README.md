@@ -4,7 +4,7 @@ Implementation of the single-player card game ["Freecell"](https://en.wikipedia.
 ## Gameplay
 The controller is publically used to run the game, taking in the initial input and printing the current game state to the provided output. 
 
-### Start Game
+#### Starting Game
 This implementation has two game types. Hence, to start the game one needs to declare the corresponding model: 
 <ul>
 <li> SINGLEMOVE - new FreecellModelCreator().create(FreecellModelCreator.GameType.SINGLEMOVE) 
